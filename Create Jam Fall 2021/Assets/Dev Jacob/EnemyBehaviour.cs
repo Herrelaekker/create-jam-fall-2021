@@ -8,25 +8,26 @@ public class EnemyBehaviour : MonoBehaviour
     public float startHealth = 5f;
     private float health;
     public Slider slider;
-    public GameObject player;
+    private GameObject player;
     public Rigidbody2D rb;
 
     public float moveSpeed = 1f;
     public float damage = 15;
-    public Transform body;
+    public GameObject body;
 
     private void Start()
     {
         health = startHealth;
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
     private void Update()
     {
-        Vector3 dir = player.transform.position - body.position;
+        Vector3 dir = player.transform.position - transform.position;
         float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg - 90;
 
         Quaternion lookRotation = Quaternion.AngleAxis(angle, Vector3.forward);
-        transform.rotation = Quaternion.Slerp(body.rotation, lookRotation, 10);
+        body.transform.rotation = Quaternion.Slerp(body.transform.rotation, lookRotation, 10);
 
         rb.MovePosition(rb.position + new Vector2(dir.x, dir.y).normalized * moveSpeed * Time.fixedDeltaTime);
     }
@@ -36,7 +37,7 @@ public class EnemyBehaviour : MonoBehaviour
         health -= damageTaken;
         print("AV! health Left: " + health);
         if (health <= 0)
-            Destroy(body.gameObject);
+            Destroy(transform.gameObject);
         else
             slider.value = health / startHealth;
     }
