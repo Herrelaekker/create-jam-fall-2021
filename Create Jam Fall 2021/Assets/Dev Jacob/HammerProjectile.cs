@@ -17,6 +17,8 @@ public class HammerProjectile : MonoBehaviour
 
     public float damage;
 
+    List<GameObject> enemiesHit = new List<GameObject>();
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,6 +29,10 @@ public class HammerProjectile : MonoBehaviour
     {
         if (collision.gameObject.tag == "Enemy")
         {
+            for (int i = 0; i < enemiesHit.Count; i++)
+                if (enemiesHit[i] == collision.gameObject)
+                    return;
+            enemiesHit.Add(collision.gameObject);
             collision.gameObject.GetComponent<EnemyBehaviour>().TakeDamage(damage);
         }
     }
@@ -41,7 +47,11 @@ public class HammerProjectile : MonoBehaviour
             dir = new Vector2(spawnPoint.position.x, spawnPoint.position.y) - new Vector2(transform.position.x, transform.position.y);
 
             if (!returning)
+            {
                 returning = true;
+                enemiesHit = new List<GameObject>();
+
+            }
         }
         else
         {

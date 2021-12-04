@@ -8,7 +8,7 @@ public class EnemyBehaviour : MonoBehaviour
     public float startHealth = 5f;
     private float health;
     public Slider slider;
-    private GameObject player;
+    public GameObject player;
     public Rigidbody2D rb;
 
     public float moveSpeed = 1f;

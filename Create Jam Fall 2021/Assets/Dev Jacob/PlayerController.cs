@@ -52,10 +52,9 @@ public class PlayerController : MonoBehaviour
             if (!invinsible)
             {
                 TakeDamage(collision.GetComponent<EnemyBehaviour>().damage);
-                invinsibilityTimer = 0;
-                invinsible = true;
             }
         }
+
     }
 
     // Update is called once per frame
@@ -109,6 +108,9 @@ public class PlayerController : MonoBehaviour
     {
         health -= damageTaken;
         healthText.text = "Health: " + health;
+
+        invinsibilityTimer = 0;
+        invinsible = true;
     }
 
     private void FixedUpdate()
