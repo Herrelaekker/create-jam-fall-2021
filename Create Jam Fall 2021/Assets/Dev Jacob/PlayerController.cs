@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour
     public float damage = 1f;
     public float invinsibilityTime = 1f;
     private float invinsibilityTimer = 0f;
+    bool hammerOut = false;
 
     public float blinkTime = .2f;
     private float blinkTimer = 0f;
@@ -40,7 +41,11 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.tag == "Hammer")
         {
             if (collision.gameObject.GetComponent<HammerProjectile>().returning)
+            {
                 Destroy(collision.gameObject);
+                hammerOut = false;
+            }
+
         }
         else if (collision.gameObject.tag == "Enemy")
         {
@@ -66,13 +71,14 @@ public class PlayerController : MonoBehaviour
         Quaternion lookRotation = Quaternion.AngleAxis(angle, Vector3.forward);
         transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, 1000);
 
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && !hammerOut)
         {
             var hammer = Instantiate(hammerProjectile, shootTransform);
             hammer.transform.parent = null;
             hammer.GetComponent<HammerProjectile>().moveToPos = transform.position + (new Vector3(dir.x, dir.y, 0).normalized * shootDistance);
             hammer.GetComponent<HammerProjectile>().spawnPoint = transform;
             hammer.GetComponent<HammerProjectile>().damage = damage;
+            hammerOut = true;
         }
 
         if (invinsible)
