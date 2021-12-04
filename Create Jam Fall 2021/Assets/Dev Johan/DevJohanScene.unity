@@ -264,22 +264,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db7ffaddac84c084db6dbc95b8645425, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  floorSizeX: 20
-  floorSizeY: 20
-  floorRoomMin: 225
-  floorRoomMax: 255
+  floorSizeX: 10
+  floorSizeY: 10
+  floorRoomMin: 22
+  floorRoomMax: 27
   targetRoomCount: 0
   maxAttempts: 500
   failedAttempts: 0
   startRoom: {fileID: 0}
   floorRooms: []
   startRoomPrefab: {fileID: 3574682953856999657, guid: cee906adfdc711a46b314ebbd6683936, type: 3}
-  normalRoomPrefabs:
+  enemyRoomPrefabs:
+  - {fileID: 6901396047449959706, guid: 119a194350146014dad3653db9ed65c7, type: 3}
   - {fileID: 519248949177237149, guid: a6cde223ecf226742bd95fdd368e55ba, type: 3}
   - {fileID: 5608428523956277530, guid: d96df22ccfc72f440962a03bcd19b1ab, type: 3}
-  - {fileID: 6901396047449959706, guid: 119a194350146014dad3653db9ed65c7, type: 3}
   - {fileID: 4749674876440654648, guid: a74672633b0822248846b057bfcdf0c0, type: 3}
-  specialRoomPrefabs: []
+  specialRoomPrefabs:
+  - {fileID: 2310862640575566366, guid: d2f3215dd3894bd4a9e7449f2deae842, type: 3}
+  - {fileID: 2310862640575566366, guid: d2f3215dd3894bd4a9e7449f2deae842, type: 3}
+  - {fileID: 2310862640575566366, guid: d2f3215dd3894bd4a9e7449f2deae842, type: 3}
+  - {fileID: 2310862640575566366, guid: d2f3215dd3894bd4a9e7449f2deae842, type: 3}
+  - {fileID: 2310862640575566366, guid: d2f3215dd3894bd4a9e7449f2deae842, type: 3}
+  - {fileID: 2310862640575566366, guid: d2f3215dd3894bd4a9e7449f2deae842, type: 3}
 --- !u!4 &1363084307
 Transform:
   m_ObjectHideFlags: 0

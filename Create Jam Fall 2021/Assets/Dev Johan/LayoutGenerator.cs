@@ -18,7 +18,7 @@ public class LayoutGenerator : MonoBehaviour
     public List<RoomManager> floorRooms;
 
     public GameObject startRoomPrefab;
-    public GameObject[] normalRoomPrefabs;
+    public GameObject[] enemyRoomPrefabs;
     public GameObject[] specialRoomPrefabs;
 
 	public void CreateFloor()
@@ -34,7 +34,6 @@ public class LayoutGenerator : MonoBehaviour
 		startRoom.transform.name = "Room_" + startRoom.roomXpos + ":" + startRoom.roomYpos + " _" + startRoom.name;
 		startRoom.transform.position = new Vector3(transform.position.x + startRoom.roomXpos * 20, transform.position.y + startRoom.roomYpos * 15, 0);
 		startRoom.transform.parent = transform;
-		startRoom.hasBeenCleared = true;
 
 		floorRooms.Add(startRoom);
 		floorLayout[startRoom.roomXpos, startRoom.roomYpos] = startRoom;
@@ -43,7 +42,7 @@ public class LayoutGenerator : MonoBehaviour
 
 		foreach(RoomManager room in floorRooms)
         {
-			room.ClearUnusedDoors();
+			room.CloseUnusedDoors();
         }
 	}
 
@@ -75,7 +74,7 @@ public class LayoutGenerator : MonoBehaviour
 						{
 							if (floorLayout[roomToGenerateFrom.roomXpos - 1, roomToGenerateFrom.roomYpos] == null)
 							{
-								newRoom = GenerateRoom(normalRoomPrefabs[Random.Range(0, normalRoomPrefabs.Length)],
+								newRoom = GenerateRoom(enemyRoomPrefabs[Random.Range(0, enemyRoomPrefabs.Length)],
 													   roomToGenerateFrom, directionToGenerate, -1, 0);
 							}
 						}
@@ -88,7 +87,7 @@ public class LayoutGenerator : MonoBehaviour
 						{
 							if (floorLayout[roomToGenerateFrom.roomXpos, roomToGenerateFrom.roomYpos + 1] == null)
 							{
-								newRoom = GenerateRoom(normalRoomPrefabs[Random.Range(0, normalRoomPrefabs.Length)],
+								newRoom = GenerateRoom(enemyRoomPrefabs[Random.Range(0, enemyRoomPrefabs.Length)],
 													   roomToGenerateFrom, directionToGenerate, 0, +1);
 							}
 						}
@@ -101,7 +100,7 @@ public class LayoutGenerator : MonoBehaviour
 						{
 							if (floorLayout[roomToGenerateFrom.roomXpos + 1, roomToGenerateFrom.roomYpos] == null)
 							{
-								newRoom = GenerateRoom(normalRoomPrefabs[Random.Range(0, normalRoomPrefabs.Length)],
+								newRoom = GenerateRoom(enemyRoomPrefabs[Random.Range(0, enemyRoomPrefabs.Length)],
 													   roomToGenerateFrom, directionToGenerate, +1, 0);
 							}
 						}
@@ -114,7 +113,7 @@ public class LayoutGenerator : MonoBehaviour
 						{
 							if (floorLayout[roomToGenerateFrom.roomXpos, roomToGenerateFrom.roomYpos - 1] == null)
 							{
-								newRoom = GenerateRoom(normalRoomPrefabs[Random.Range(0, normalRoomPrefabs.Length)],
+								newRoom = GenerateRoom(enemyRoomPrefabs[Random.Range(0, enemyRoomPrefabs.Length)],
 													   roomToGenerateFrom, directionToGenerate, 0, -1);
 							}
 						}
@@ -145,16 +144,21 @@ public class LayoutGenerator : MonoBehaviour
 
 		foreach (GameObject room in specialRoomPrefabs)
 		{
-			bool generateSucces = false;
+			bool generateSuccess = false;
 
-			while (!generateSucces)
+			while (!generateSuccess)
 			{
-				RoomManager roomToGenerateFrom = floorRooms[Random.Range(0, floorRooms.Count)];
+				RoomManager roomToGenerateFrom = null;
+				do
+				{
+					roomToGenerateFrom = floorRooms[Random.Range(0, floorRooms.Count)];
+				} while (roomToGenerateFrom.TestAvailableConnections() == false);
+
+				RoomManager newRoom = null;
 
 				int direction = roomToGenerateFrom.GetAvailableDoor();
 
-				if (direction > -1
-				   && roomToGenerateFrom.isSpecialRoom == false)
+				if (direction > -1)
 				{
 					switch (direction)
 					{
@@ -162,8 +166,8 @@ public class LayoutGenerator : MonoBehaviour
 							if (roomToGenerateFrom.roomXpos > 0
 							   && floorLayout[roomToGenerateFrom.roomXpos - 1, roomToGenerateFrom.roomYpos] == null)
 							{
-								GenerateRoom(room, roomToGenerateFrom, direction, -1, 0);
-								generateSucces = true;
+								newRoom = GenerateRoom(room.gameObject, roomToGenerateFrom, direction, -1, 0);
+								generateSuccess = true;
 							}
 							break;
 
@@ -172,8 +176,8 @@ public class LayoutGenerator : MonoBehaviour
 								roomToGenerateFrom.roomYpos > 0
 								&& floorLayout[roomToGenerateFrom.roomXpos, roomToGenerateFrom.roomYpos - 1] == null)
 							{
-								GenerateRoom(room, roomToGenerateFrom, direction, 0, -1);
-								generateSucces = true;
+								newRoom = GenerateRoom(room.gameObject, roomToGenerateFrom, direction, 0, +1);
+								generateSuccess = true;
 							}
 							break;
 
@@ -181,8 +185,8 @@ public class LayoutGenerator : MonoBehaviour
 							if (roomToGenerateFrom.roomXpos < floorSizeX - 1
 							   && floorLayout[roomToGenerateFrom.roomXpos + 1, roomToGenerateFrom.roomYpos] == null)
 							{
-								GenerateRoom(room, roomToGenerateFrom, direction, +1, 0);
-								generateSucces = true;
+								newRoom = GenerateRoom(room.gameObject, roomToGenerateFrom, direction, +1, 0);
+								generateSuccess = true;
 							}
 							break;
 
@@ -190,11 +194,16 @@ public class LayoutGenerator : MonoBehaviour
 							if (roomToGenerateFrom.roomYpos < floorSizeY - 1
 							   && floorLayout[roomToGenerateFrom.roomXpos, roomToGenerateFrom.roomYpos + 1] == null)
 							{
-								GenerateRoom(room, roomToGenerateFrom, direction, 0, +1);
-								generateSucces = true;
+								newRoom = GenerateRoom(room.gameObject, roomToGenerateFrom, direction, 0, -1);
+								generateSuccess = true;
 							}
 							break;
 					}
+
+					if(generateSuccess)
+                    {
+						newRoom.CloseUnusedDoors();
+                    }
 				}
 			}
 		}

@@ -1,58 +1,27 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
+using System.Linq;
 
-public class RoomManager : MonoBehaviour
+public abstract class RoomManager : MonoBehaviour
 {
     public int roomXpos;
     public int roomYpos;
 
-    public bool isSpecialRoom;
-
     //Left, Up, Right, Down
     //A value of 0 means open, 1 means closed
     public int[] roomConnections = new int[] { 0, 0, 0, 0 };
-
-    public bool hasBeenCleared;
-    public bool clearingRoom;
-
-    public Transform roomEnemies;
-    public List<Transform> enemies;
-
     public List<DoorwayTransition> doorways;
 
-    // Start is called before the first frame update
-    public void InitiateRoom()
+    public abstract void InitiateRoom();
+
+    public virtual void EnterRoom() { }
+    public virtual void LockDoors() { }
+    public virtual void UnlockDoors() { }
+
+    public void CloseUnusedDoors()
     {
-        hasBeenCleared = false;
-        clearingRoom = false;
-
-        doorways.Clear();
-        doorways.AddRange(transform.GetComponentsInChildren<DoorwayTransition>());
-
-        enemies.Clear();
-        foreach (Transform child in roomEnemies)
-        {
-            enemies.Add(child);
-        }
-
-        if (enemies.Count == 0)
-        {
-            hasBeenCleared = true;
-        }
-        else
-        {
-            foreach (Transform enemy in enemies)
-            {
-                enemy.gameObject.SetActive(false);
-            }
-        }
-    }
-
-    public void ClearUnusedDoors()
-    { 
-        for(int x = 0; x < doorways.Count; x++)
+        for (int x = 0; x < doorways.Count; x++)
         {
             if (doorways[x].roomTransitionTo == null)
             {
@@ -63,57 +32,9 @@ public class RoomManager : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        if(clearingRoom)
-        {
-            if(roomEnemies.childCount == 0)
-            {
-                clearingRoom = false;
-                hasBeenCleared = true;
-                UnlockDoors();
-            }
-        }
-    }
-
-    public void EnterRoom()
-    {
-        if(!hasBeenCleared)
-        {
-            clearingRoom = true;
-            SpawnEnemies();
-            LockDoors();
-        }
-    }
-
-    public void SpawnEnemies()
-    {
-        foreach (Transform enemy in enemies)
-        {
-            enemy.gameObject.SetActive(true);
-        }
-    }
-
-    public void LockDoors()
-    {
-        foreach(DoorwayTransition doorway in doorways)
-        {
-            doorway.CloseDoor();
-        }
-    }
-
-    public void UnlockDoors()
-    {
-        foreach(DoorwayTransition doorway in doorways)
-        {
-            doorway.OpenDoor();
-        }
-    }
-
     public DoorwayTransition GetDoor(int index)
     {
-        if(index == 0)
+        if (index == 0)
         {
             doorways = doorways.OrderBy(door => door.transform.position.x).ToList();
             return doorways[0];
@@ -142,7 +63,7 @@ public class RoomManager : MonoBehaviour
         int returnValue = -1;
 
         List<int> availableIndexes = new List<int>();
-        for(int x = 0; x < roomConnections.Length; x++)
+        for (int x = 0; x < roomConnections.Length; x++)
         {
             if (roomConnections[x] == 0)
             {
@@ -171,9 +92,9 @@ public class RoomManager : MonoBehaviour
         roomConnections[indexToClose] = 1;
     }
 
-    public bool TestAvailableConnections()
+    public virtual bool TestAvailableConnections()
     {
-        if(roomConnections[0] == 1 &&
+        if (roomConnections[0] == 1 &&
             roomConnections[1] == 1 &&
             roomConnections[2] == 1 &&
             roomConnections[3] == 1)
@@ -184,3 +105,6 @@ public class RoomManager : MonoBehaviour
         return true;
     }
 }
+
+
+
