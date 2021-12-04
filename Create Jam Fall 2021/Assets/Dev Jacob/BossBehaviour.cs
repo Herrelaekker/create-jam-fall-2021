@@ -67,15 +67,16 @@ public class BossBehaviour : EnemyBehaviour
                 break;
 
         }
-    }
-
-    private void FixedUpdate()
-    {
         if (aggressionLevel != 2)
         {
             if (health <= agressionChange[aggressionLevel])
                 aggressionLevel++;
         }
+
+    }
+
+    private void FixedUpdate()
+    {
 
         switch (curState)
         {
@@ -139,25 +140,6 @@ public class BossBehaviour : EnemyBehaviour
         //rb.MovePosition(rb.position + new Vector2(dir.x, dir.y).normalized * moveSpeed * Time.fixedDeltaTime);
     }
 
-
-    public void TakeDamage(float damageTaken)
-    {
-        print("av");
-        health -= damageTaken;
-
-        if (!slider.gameObject.activeSelf)
-            slider.gameObject.SetActive(true);
-
-        if (health <= 0)
-        {
-            Destroy(slider.gameObject);
-            Destroy(transform.gameObject);
-        }
-        else
-            slider.value = health / startHealth;
-
-
-    }
 
 
 }

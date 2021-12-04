@@ -130,7 +130,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotationSpeed: 2
   speed: 10
-  timeBeforeReturning: 1
+  timeBeforeReturning: 0.5
   spawnPoint: {fileID: 0}
   moveToPos: {x: 0, y: 0, z: 0}
   returning: 0

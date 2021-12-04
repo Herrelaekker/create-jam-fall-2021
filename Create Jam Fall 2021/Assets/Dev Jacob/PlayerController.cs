@@ -25,7 +25,10 @@ public class PlayerController : MonoBehaviour
     Vector2 movement;
     public TMP_Text healthText;
     public float startHealth = 100;
-    private float health;
+    public float health;
+
+    public float timeBeforeHammerBack = 1f;
+    public float hammerRadius = 1f;
 
     // Start is called before the first frame update
     void Start()
@@ -73,7 +76,9 @@ public class PlayerController : MonoBehaviour
             hammer.transform.parent = null;
             hammer.GetComponent<HammerProjectile>().moveToPos = transform.position + (new Vector3(dir.x, dir.y, 0).normalized * shootDistance);
             hammer.GetComponent<HammerProjectile>().spawnPoint = transform;
+            hammer.GetComponent<HammerProjectile>().timeBeforeReturning = timeBeforeHammerBack;
             hammer.GetComponent<HammerProjectile>().damage = damage;
+            hammer.transform.localScale = new Vector3(hammerRadius, hammerRadius, hammerRadius);
             hammerOut = true;
         }
 

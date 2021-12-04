@@ -84,7 +84,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75e1affa42b77a44e91d88c32fa326d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startHealth: 30
+  startHealth: 60
   health: 0
   slider: {fileID: 0}
   player: {fileID: 0}
@@ -93,22 +93,22 @@ MonoBehaviour:
   damage: 10
   body: {fileID: 16408975153680047}
   lockOnTimePerLevel:
-  - 3
   - 2
   - 1
+  - 0.5
   waitTimeBeforeChargePerLevel:
-  - 1
   - 0.75
   - 0.5
+  - 0.25
   chargeSpeed: 10
   aggressionLevel: 0
-  agressionChange: 1e0000000a000000
-  chargesPerLevel: 030000000400000005000000
-  projectilesPerLevel: 19000000280000003c000000
+  agressionChange: 2800000014000000
+  chargesPerLevel: 020000000300000004000000
+  projectilesPerLevel: 190000003200000050000000
   spawnTimer: 0
   timeBeforeSpawning:
-  - 0.3
   - 0.2
+  - 0.15
   - 0.1
   spawnPoints:
   - {fileID: 2983365252951009519}
