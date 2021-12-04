@@ -26,6 +26,7 @@ public class RoomManager : MonoBehaviour
         {
             if(doorways[x].roomTransitionTo == null)
             {
+                doorways[x].CloseDoor();
                 doorways.Remove(doorways[x]);
                 x--;
             }

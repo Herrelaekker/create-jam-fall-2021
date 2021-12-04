@@ -203,6 +203,10 @@ PrefabInstance:
       propertyPath: healthText
       value: 
       objectReference: {fileID: 2067510060}
+    - target: {fileID: 1711079166883862051, guid: 7cf9ff8373a8b944dbdf0a9b69f9fdaa, type: 3}
+      propertyPath: hammerProjectile
+      value: 
+      objectReference: {fileID: 8982748199635141269, guid: 5f82f79af17dfb84689b672868ced8a6, type: 3}
     - target: {fileID: 1711079166883862060, guid: 7cf9ff8373a8b944dbdf0a9b69f9fdaa, type: 3}
       propertyPath: m_RootOrder
       value: 2
