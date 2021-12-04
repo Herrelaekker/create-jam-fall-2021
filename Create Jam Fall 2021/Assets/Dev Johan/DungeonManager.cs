@@ -6,7 +6,7 @@ public class DungeonManager : MonoBehaviour
 {
     public GameObject player;
     public GameObject dungeonCamera;
-    public GameObject currentRoom;
+    public RoomManager currentRoom;
 
     // Start is called before the first frame update
     void Start()
@@ -36,6 +36,7 @@ public class DungeonManager : MonoBehaviour
             dungeonCamera.transform.position = transitionRoomPos + new Vector3(0, 0, -10);
         }
 
-        currentRoom = roomTransitionTo;
+        currentRoom = roomTransitionTo.GetComponent<RoomManager>();
+        currentRoom.EnterRoom();
     }
 }

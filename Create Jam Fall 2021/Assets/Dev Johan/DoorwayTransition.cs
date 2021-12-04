@@ -5,18 +5,28 @@ using UnityEngine;
 public class DoorwayTransition : MonoBehaviour
 {
     public GameObject roomTransitionTo;
+    public GameObject doorBlock;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.gameObject.tag == "Player")
         {
-            FindObjectOfType<DungeonManager>().RoomTransition(roomTransitionTo);
+            if (roomTransitionTo != null)
+            {
+                FindObjectOfType<DungeonManager>().RoomTransition(roomTransitionTo);
+            }
         }
     }
 
-        // Update is called once per frame
-        void Update()
+    public void CloseDoor()
     {
-        
+        this.gameObject.SetActive(false);
+        doorBlock.SetActive(true);
+    }
+
+    public void OpenDoor()
+    {
+        this.gameObject.SetActive(true);
+        doorBlock.SetActive(false);
     }
 }
