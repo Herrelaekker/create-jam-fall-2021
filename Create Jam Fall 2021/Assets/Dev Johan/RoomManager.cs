@@ -1,9 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class RoomManager : MonoBehaviour
 {
+    public int roomXpos;
+    public int roomYpos;
+
+    public bool isSpecialRoom;
+
+    //Left, Up, Right, Down
+    //A value of 0 means open, 1 means closed
+    public int[] roomConnections = new int[] { 0, 0, 0, 0 };
 
     public bool hasBeenCleared;
     public bool clearingRoom;
@@ -14,7 +23,7 @@ public class RoomManager : MonoBehaviour
     public List<DoorwayTransition> doorways;
 
     // Start is called before the first frame update
-    void Start()
+    public void InitiateRoom()
     {
         hasBeenCleared = false;
         clearingRoom = false;
@@ -22,18 +31,8 @@ public class RoomManager : MonoBehaviour
         doorways.Clear();
         doorways.AddRange(transform.GetComponentsInChildren<DoorwayTransition>());
 
-        for (int x = 0; x < doorways.Count; x++)
-        {
-            if(doorways[x].roomTransitionTo == null)
-            {
-                doorways[x].CloseDoor();
-                doorways.Remove(doorways[x]);
-                x--;
-            }
-        }
-
         enemies.Clear();
-        foreach(Transform child in roomEnemies)
+        foreach (Transform child in roomEnemies)
         {
             enemies.Add(child);
         }
@@ -47,6 +46,19 @@ public class RoomManager : MonoBehaviour
             foreach (Transform enemy in enemies)
             {
                 enemy.gameObject.SetActive(false);
+            }
+        }
+    }
+
+    public void ClearUnusedDoors()
+    { 
+        for(int x = 0; x < doorways.Count; x++)
+        {
+            if (doorways[x].roomTransitionTo == null)
+            {
+                doorways[x].CloseDoor();
+                doorways.RemoveAt(x);
+                x--;
             }
         }
     }
@@ -69,7 +81,6 @@ public class RoomManager : MonoBehaviour
     {
         if(!hasBeenCleared)
         {
-            Debug.Log("ENTERED ROOM FOR THE FIRST TIME");
             clearingRoom = true;
             SpawnEnemies();
             LockDoors();
@@ -81,7 +92,6 @@ public class RoomManager : MonoBehaviour
         foreach (Transform enemy in enemies)
         {
             enemy.gameObject.SetActive(true);
-            Debug.Log("SPAWN ENEMY HAVE FUN");
         }
     }
 
@@ -89,7 +99,6 @@ public class RoomManager : MonoBehaviour
     {
         foreach(DoorwayTransition doorway in doorways)
         {
-            Debug.Log("DOORS ARE CLOSED! KILL THE ENEMIES!");
             doorway.CloseDoor();
         }
     }
@@ -98,8 +107,80 @@ public class RoomManager : MonoBehaviour
     {
         foreach(DoorwayTransition doorway in doorways)
         {
-            Debug.Log("GOOD JOB HAVE FREEDOM!");
             doorway.OpenDoor();
         }
+    }
+
+    public DoorwayTransition GetDoor(int index)
+    {
+        if(index == 0)
+        {
+            doorways = doorways.OrderBy(door => door.transform.position.x).ToList();
+            return doorways[0];
+        }
+        if (index == 1)
+        {
+            doorways = doorways.OrderByDescending(door => door.transform.position.y).ToList();
+            return doorways[0];
+        }
+        if (index == 2)
+        {
+            doorways = doorways.OrderByDescending(door => door.transform.position.x).ToList();
+            return doorways[0];
+        }
+        if (index == 3)
+        {
+            doorways = doorways.OrderBy(door => door.transform.position.y).ToList();
+            return doorways[0];
+        }
+        Debug.Log("Requested a door by an index number that is not supported: " + index);
+        return null;
+    }
+
+    public int GetAvailableDoor()
+    {
+        int returnValue = -1;
+
+        List<int> availableIndexes = new List<int>();
+        for(int x = 0; x < roomConnections.Length; x++)
+        {
+            if (roomConnections[x] == 0)
+            {
+                availableIndexes.Add(x);
+            }
+        }
+
+        if (availableIndexes.Count != 0)
+        {
+            returnValue = availableIndexes[Random.Range(0, availableIndexes.Count)];
+        }
+
+        return returnValue;
+    }
+
+    public void MakeConnection(int indexToConnect, RoomManager otherRoom)
+    {
+        DoorwayTransition myDoor = GetDoor(indexToConnect);
+
+        myDoor.roomTransitionTo = otherRoom.gameObject;
+        roomConnections[indexToConnect] = 1;
+    }
+
+    public void CloseConnection(int indexToClose)
+    {
+        roomConnections[indexToClose] = 1;
+    }
+
+    public bool TestAvailableConnections()
+    {
+        if(roomConnections[0] == 1 &&
+            roomConnections[1] == 1 &&
+            roomConnections[2] == 1 &&
+            roomConnections[3] == 1)
+        {
+            //All are unavailable
+            return false;
+        }
+        return true;
     }
 }
