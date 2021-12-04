@@ -27,7 +27,7 @@ public class SpawnerTypeEnemy : EnemyBehaviour
             {
                 var enemy = Instantiate(enemySpawned, spawnPoints[i]);
                 enemy.transform.rotation = Quaternion.Euler(0,0,0);
-                enemy.transform.parent = null;
+                enemy.transform.parent = transform.parent;
             }
 
             spawnTimer = 0f;

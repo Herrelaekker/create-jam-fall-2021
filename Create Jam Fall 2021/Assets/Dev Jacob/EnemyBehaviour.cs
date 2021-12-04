@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class EnemyBehaviour : MonoBehaviour
 {
     public float startHealth = 5f;
-    private float health;
+    public float health;
     public Slider slider;
     public GameObject player;
     public Rigidbody2D rb;
@@ -19,6 +19,7 @@ public class EnemyBehaviour : MonoBehaviour
     {
         health = startHealth;
         player = GameObject.FindGameObjectWithTag("Player");
+        slider.gameObject.SetActive(false);
     }
 
     private void Update()
@@ -35,9 +36,15 @@ public class EnemyBehaviour : MonoBehaviour
     public void TakeDamage(float damageTaken)
     {
         health -= damageTaken;
-        print("AV! health Left: " + health);
+
+        if (!slider.gameObject.activeSelf)
+            slider.gameObject.SetActive(true);
+
         if (health <= 0)
+        {
+            Destroy(slider.gameObject);
             Destroy(transform.gameObject);
+        }
         else
             slider.value = health / startHealth;
     }
