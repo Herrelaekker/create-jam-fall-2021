@@ -49,10 +49,7 @@ public class PlayerController : MonoBehaviour
         }
         else if (collision.gameObject.tag == "Enemy")
         {
-            if (!invinsible)
-            {
-                TakeDamage(collision.GetComponent<EnemyBehaviour>().damage);
-            }
+               TakeDamage(collision.GetComponent<EnemyBehaviour>().damage);
         }
 
     }
@@ -106,11 +103,14 @@ public class PlayerController : MonoBehaviour
 
     public void TakeDamage(float damageTaken)
     {
-        health -= damageTaken;
-        healthText.text = "Health: " + health;
+        if (!invinsible)
+        {
+            health -= damageTaken;
+            healthText.text = "Health: " + health;
 
-        invinsibilityTimer = 0;
-        invinsible = true;
+            invinsibilityTimer = 0;
+            invinsible = true;
+        }
     }
 
     private void FixedUpdate()

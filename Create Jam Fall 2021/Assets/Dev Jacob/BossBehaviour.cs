@@ -4,21 +4,26 @@ using UnityEngine;
 
 public class BossBehaviour : EnemyBehaviour
 {
-    string curState = "Shoot";
-    public float lockOnTime = 3f;
+    string curState = "Charge";
+    public float[] lockOnTimePerLevel = { 3f ,2f, 1f};
     float lockOnTimer = 0f;
-    public float waitTimeBeforeCharge = 1f;
+    public float[] waitTimeBeforeChargePerLevel = { 1f, 0.75f, 0.5f };
     float waitTimer = 0f;
 
     Vector3 dir;
     public float chargeSpeed = 10f;
 
     public int aggressionLevel = 0;
+    public int[] agressionChange = {30, 10};
+
     public int[] chargesPerLevel = { 3,4,5};
     private int curCharges = 0;
 
-    private float spawnTimer = 0f;
-    public float timeBeforeSpawning = 0.3f;
+    public int[] projectilesPerLevel = { 25, 40, 60 };
+    private int curProjectiles = 0;
+
+    public float spawnTimer = 0f;
+    public float[] timeBeforeSpawning = { 0.3f, .2f, .1f };
     public Transform[] spawnPoints;
     public GameObject projectilePrefab;
     public float rotationSpeed;
@@ -66,10 +71,16 @@ public class BossBehaviour : EnemyBehaviour
 
     private void FixedUpdate()
     {
+        if (aggressionLevel != 2)
+        {
+            if (health <= agressionChange[aggressionLevel])
+                aggressionLevel++;
+        }
+
         switch (curState)
         {
             case "Charge":
-                if (lockOnTimer < lockOnTime)
+                if (lockOnTimer < lockOnTimePerLevel[aggressionLevel])
                 {
                     dir = player.transform.position - transform.position;
                     float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg - 90;
@@ -80,7 +91,7 @@ public class BossBehaviour : EnemyBehaviour
                 }
                 else
                 {
-                    if (waitTimer >= waitTimeBeforeCharge)
+                    if (waitTimer >= waitTimeBeforeChargePerLevel[aggressionLevel])
                     {
                         rb.MovePosition(rb.position + new Vector2(dir.x, dir.y).normalized * chargeSpeed * Time.fixedDeltaTime);
 
@@ -91,29 +102,62 @@ public class BossBehaviour : EnemyBehaviour
 
                 break;
             case "Shoot":
-                dir = transform.position;
                 body.transform.Rotate(0.0f, 0.0f, Time.fixedDeltaTime*rotationSpeed, Space.Self);
 
-                if (spawnTimer >= timeBeforeSpawning)
+                if (spawnTimer >= timeBeforeSpawning[aggressionLevel])
                 {
                     for (int i = 0; i < spawnPoints.Length; i++)
                     {
                         var enemy = Instantiate(projectilePrefab, spawnPoints[i]);
-                        enemy.GetComponent<EnemyProjectile>().dir = new Vector2(dir.x, dir.y).normalized;
+
+                        Vector3 dir = new Vector2(spawnPoints[i].up.x, spawnPoints[i].up.y);
+                        //float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg - 90;
+
+                        enemy.GetComponent<EnemyProjectile>().dir =( new Vector2(dir.x, dir.y)).normalized;
                         enemy.transform.parent = null;
                     }
 
                     spawnTimer = 0f;
+                    curProjectiles += 1;
+
+                    if (curProjectiles >= projectilesPerLevel[aggressionLevel])
+                    {
+                        curProjectiles = 0;
+                        ChangeState();
+                    }
                 }
                 else
                 {
-                    spawnTimer += Time.deltaTime;
+                    spawnTimer += Time.fixedDeltaTime;
                 }
+
                 break;
         }
 
 
+
         //rb.MovePosition(rb.position + new Vector2(dir.x, dir.y).normalized * moveSpeed * Time.fixedDeltaTime);
     }
+
+
+    public void TakeDamage(float damageTaken)
+    {
+        print("av");
+        health -= damageTaken;
+
+        if (!slider.gameObject.activeSelf)
+            slider.gameObject.SetActive(true);
+
+        if (health <= 0)
+        {
+            Destroy(slider.gameObject);
+            Destroy(transform.gameObject);
+        }
+        else
+            slider.value = health / startHealth;
+
+
+    }
+
 
 }

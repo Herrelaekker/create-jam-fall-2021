@@ -21,13 +21,12 @@ public class EnemyProjectile : MonoBehaviour
             collision.GetComponent<PlayerController>().TakeDamage(damage);
         }
 
-        if (collision.tag != "Enemy")
+        if (collision.tag == "Wall" || collision.tag == "Player")
             Destroy(gameObject);
     }
 
     private void FixedUpdate()
     {
-        print(dir);
         rb.MovePosition(rb.position + dir * speed * Time.fixedDeltaTime);
     }
 }
