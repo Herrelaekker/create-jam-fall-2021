@@ -1278,10 +1278,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Boss (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 16408974465870565, guid: c622635330eeb0e4494e2f05c8b8e127, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 16408974465870584, guid: c622635330eeb0e4494e2f05c8b8e127, type: 3}
       propertyPath: slider
       value: 
@@ -3146,34 +3142,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Boss
       objectReference: {fileID: 0}
-    - target: {fileID: 16408974465870565, guid: c622635330eeb0e4494e2f05c8b8e127, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 16408974465870584, guid: c622635330eeb0e4494e2f05c8b8e127, type: 3}
-      propertyPath: health
-      value: 20
-      objectReference: {fileID: 0}
     - target: {fileID: 16408974465870584, guid: c622635330eeb0e4494e2f05c8b8e127, type: 3}
       propertyPath: slider
       value: 
       objectReference: {fileID: 79914695}
-    - target: {fileID: 16408974465870584, guid: c622635330eeb0e4494e2f05c8b8e127, type: 3}
-      propertyPath: startHealth
-      value: 60
-      objectReference: {fileID: 0}
-    - target: {fileID: 16408974465870584, guid: c622635330eeb0e4494e2f05c8b8e127, type: 3}
-      propertyPath: projectilePrefab
-      value: 
-      objectReference: {fileID: 2780773572948310240, guid: 12af375523b3d074da00279bb77f8f48, type: 3}
-    - target: {fileID: 16408974465870584, guid: c622635330eeb0e4494e2f05c8b8e127, type: 3}
-      propertyPath: waitTimeBeforeChargePerLevel.Array.data[0]
-      value: 0.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 16408974465870584, guid: c622635330eeb0e4494e2f05c8b8e127, type: 3}
-      propertyPath: waitTimeBeforeChargePerLevel.Array.data[2]
-      value: 0.3
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c622635330eeb0e4494e2f05c8b8e127, type: 3}
 --- !u!1001 &8069275059025346192

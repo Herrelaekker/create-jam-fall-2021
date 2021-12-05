@@ -12,6 +12,15 @@ EditorBuildSettings:
     path: Assets/Dev Jacob/StartStory.unity
     guid: edca89d967116b049bcdb51a506a0f2d
   - enabled: 1
+    path: Assets/Dev Johan/DevJohanScene.unity
+    guid: 59afba0b0ade9b74a82f7ffab8e65a97
+  - enabled: 1
+    path: Assets/Dev Jacob/1stBossDead.unity
+    guid: 03ed1cd309039234199e235ea2911815
+  - enabled: 1
+    path: Assets/Dev Johan/Bane 2.unity
+    guid: 21c94e62a28fa534fb9822447c2b3894
+  - enabled: 1
     path: Assets/Dev Jacob/Ending.unity
     guid: 4cdb33505af5eb343a572f6bf042a0ae
   - enabled: 1

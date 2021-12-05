@@ -1,12 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BossRoomManager : RoomManager
 {
     public GameObject TheBoss;
 
     public bool bossAlive;
+    public string sceneName;
+
+    public float time = 1f;
+    float timer = 0;
+    bool startTimer = false;
 
     public override void InitiateRoom()
     {
@@ -21,7 +27,18 @@ public class BossRoomManager : RoomManager
         if (bossAlive && TheBoss.gameObject == null)
         {
             bossAlive = false;
+            startTimer = true;
             UnlockDoors();
+        }
+
+        if (startTimer)
+        {
+            if (timer >= time)
+            {
+                SceneManager.LoadScene(sceneName);
+            }
+            else
+                timer += Time.deltaTime;
         }
     }
 
