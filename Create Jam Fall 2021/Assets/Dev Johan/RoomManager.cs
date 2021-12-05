@@ -19,6 +19,14 @@ public abstract class RoomManager : MonoBehaviour
         doorways.Clear();
         doorways.AddRange(transform.GetComponentsInChildren<DoorwayTransition>());
 
+        foreach(DoorwayTransition doorway in doorways)
+        {
+            if(doorway.doorBlock == null)
+            {
+                doorway.doorBlock = doorway.transform.parent.Find("Doorblock").gameObject;
+            }
+        }
+
         Color floorColor = mapFloor.color;
         floorColor.a = 0;
         mapFloor.color = floorColor;
