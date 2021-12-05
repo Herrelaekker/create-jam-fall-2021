@@ -9,6 +9,10 @@ public class DungeonManager : MonoBehaviour
     public GameObject dungeonCamera;
     public GameObject minimapCamera;
 
+    public RectTransform minimapCanvas;
+    public Vector3 minimapBasePos;
+    public bool hideMinimap;
+
     public RoomManager currentRoom;
 
     public Vector3 roomCamPos;
@@ -27,6 +31,7 @@ public class DungeonManager : MonoBehaviour
             roomCamPos = currentRoom.transform.position + new Vector3(0, 0, -10);
             dungeonCamera.transform.position = roomCamPos;
             minimapCamera.transform.position = roomCamPos;
+            minimapBasePos = minimapCanvas.position;
 
             RevealNearbyRoomsOnMap(currentRoom);
         }
@@ -48,6 +53,16 @@ public class DungeonManager : MonoBehaviour
                 dungeonCamera.transform.position = Vector3.Slerp(dunCamPos, roomCamPos, 10f * Time.deltaTime);
             }
             minimapCamera.transform.position = dungeonCamera.transform.position;
+        }
+
+        if (hideMinimap)
+        {
+            minimapCanvas.position = Vector3.Slerp(minimapCanvas.position, minimapBasePos + new Vector3(500, 0, 0), 10f * Time.deltaTime);
+            hideMinimap = currentRoom.CheckBattle();
+        }
+        else
+        {
+            minimapCanvas.position = Vector3.Slerp(minimapCanvas.position, minimapBasePos, 10f * Time.deltaTime);
         }
     }
 
@@ -71,6 +86,7 @@ public class DungeonManager : MonoBehaviour
 
         currentRoom = roomTransitionTo.GetComponent<RoomManager>();
         currentRoom.EnterRoom();
+        hideMinimap = currentRoom.CheckBattle();
 
         currentRoom.RevealOnMap(true);
         RevealNearbyRoomsOnMap(currentRoom);

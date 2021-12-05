@@ -53,6 +53,11 @@ public abstract class RoomManager : MonoBehaviour
     public virtual void LockDoors() { }
     public virtual void UnlockDoors() { }
 
+    public virtual bool CheckBattle()
+    {
+        return false;
+    }
+
     public void CloseUnusedDoors()
     {
         for (int x = 0; x < doorways.Count; x++)

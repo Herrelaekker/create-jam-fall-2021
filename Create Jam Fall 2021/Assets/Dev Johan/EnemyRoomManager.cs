@@ -5,38 +5,22 @@ using UnityEngine;
 
 public class EnemyRoomManager : RoomManager
 {
-    public bool hasBeenCleared;
     public bool enemyBattle;
 
     public Transform roomEnemies;
-    public List<Transform> enemies;
-
+    private bool hasEnemies { get { return roomEnemies.childCount > 0; } }
 
     // Start is called before the first frame update
     public override void InitiateRoom()
     {
         base.InitiateRoom();
 
-        hasBeenCleared = false;
         enemyBattle = false;
 
-        enemies.Clear();
         foreach (Transform child in roomEnemies)
         {
-            enemies.Add(child);
-        }
-
-        if (enemies.Count == 0)
-        {
-            hasBeenCleared = true;
-        }
-        else
-        {
-            foreach (Transform enemy in enemies)
-            {
-                enemy.gameObject.SetActive(false);
-            }
-        }
+            child.gameObject.SetActive(false);
+        }     
     }
 
     // Update is called once per frame
@@ -47,7 +31,6 @@ public class EnemyRoomManager : RoomManager
             if(roomEnemies.childCount == 0)
             {
                 enemyBattle = false;
-                hasBeenCleared = true;
                 UnlockDoors();
             }
         }
@@ -55,7 +38,7 @@ public class EnemyRoomManager : RoomManager
 
     public override void EnterRoom()
     {
-        if(!hasBeenCleared)
+        if(hasEnemies)
         {
             enemyBattle = true;
             SpawnEnemies();
@@ -65,10 +48,15 @@ public class EnemyRoomManager : RoomManager
 
     public void SpawnEnemies()
     {
-        foreach (Transform enemy in enemies)
+        foreach (Transform enemy in roomEnemies)
         {
             enemy.gameObject.SetActive(true);
         }
+    }
+
+    public override bool CheckBattle()
+    {
+        return hasEnemies;
     }
 
     public override void LockDoors()

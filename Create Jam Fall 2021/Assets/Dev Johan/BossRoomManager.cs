@@ -6,34 +6,29 @@ public class BossRoomManager : RoomManager
 {
     public GameObject TheBoss;
 
-    public bool hasBeenCleared;
-    public bool bossBattle;
+    public bool bossAlive;
 
     public override void InitiateRoom()
     {
         base.InitiateRoom();
+        bossAlive = true;
 
         TheBoss.SetActive(false);
     }
 
     void Update()
     {
-        if (bossBattle)
+        if (bossAlive && TheBoss.gameObject == null)
         {
-            if (TheBoss.gameObject == null)
-            {
-                bossBattle = false;
-                hasBeenCleared = true;
-                UnlockDoors();
-            }
+            bossAlive = false;
+            UnlockDoors();
         }
     }
 
     public override void EnterRoom()
     {
-        if (!hasBeenCleared)
+        if (bossAlive)
         {
-            bossBattle = true;
             SpawnBoss();
             LockDoors();
         }
@@ -42,6 +37,11 @@ public class BossRoomManager : RoomManager
     public void SpawnBoss()
     {
         TheBoss.SetActive(true);
+    }
+
+    public override bool CheckBattle()
+    {
+        return bossAlive;
     }
 
     public override void LockDoors()
