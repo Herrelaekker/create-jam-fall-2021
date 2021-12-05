@@ -37,7 +37,6 @@ public class PlayerController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         health = startHealth;
-        healthText.text = "Health: " + health;
         sr = GetComponent<SpriteRenderer>();
     }
 

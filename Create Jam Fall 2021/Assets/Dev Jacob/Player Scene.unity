@@ -2736,6 +2736,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TestStartRoom
       objectReference: {fileID: 0}
+    - target: {fileID: 8742728544460284143, guid: 586d2cb234670784fb751ecd834b014c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 586d2cb234670784fb751ecd834b014c, type: 3}
 --- !u!1001 &2123158114318590937

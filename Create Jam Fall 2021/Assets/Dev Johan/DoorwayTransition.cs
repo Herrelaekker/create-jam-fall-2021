@@ -6,6 +6,12 @@ public class DoorwayTransition : MonoBehaviour
 {
     public GameObject roomTransitionTo;
     public GameObject doorBlock;
+    private Animator anim;
+
+    private void Awake()
+    {
+        anim = GetComponent<Animator>();
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -20,13 +26,17 @@ public class DoorwayTransition : MonoBehaviour
 
     public void CloseDoor()
     {
-        this.gameObject.SetActive(false);
+        //this.gameObject.SetActive(false);
         doorBlock.SetActive(true);
+        anim.SetBool("Open", false);
+        anim.SetBool("Close", true);
     }
 
     public void OpenDoor()
     {
-        this.gameObject.SetActive(true);
+        //this.gameObject.SetActive(true);
         doorBlock.SetActive(false);
+        anim.SetBool("Open", true);
+        anim.SetBool("Close", false);
     }
 }
