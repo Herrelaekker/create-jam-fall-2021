@@ -14,6 +14,7 @@ public class EnemyBehaviour : MonoBehaviour
     public float moveSpeed = 1f;
     public float damage = 15;
     public GameObject body;
+    public bool invulnerable = false;
 
     private void Start()
     {
@@ -35,17 +36,20 @@ public class EnemyBehaviour : MonoBehaviour
 
     public void TakeDamage(float damageTaken)
     {
-        health -= damageTaken;
-
-        if (!slider.gameObject.activeSelf)
-            slider.gameObject.SetActive(false);
-
-        if (health <= 0)
+        if (!invulnerable)
         {
-            Destroy(slider.gameObject);
-            Destroy(transform.gameObject);
+            health -= damageTaken;
+
+            if (!slider.gameObject.activeSelf)
+                slider.gameObject.SetActive(false);
+
+            if (health <= 0)
+            {
+                Destroy(slider.gameObject);
+                Destroy(transform.gameObject);
+            }
+            else
+                slider.value = health / startHealth;
         }
-        else
-            slider.value = health / startHealth;
     }
 }
