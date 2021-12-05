@@ -1,7 +1,31 @@
 fileFormatVersion: 2
 guid: 061d10c3ec8f38146aa5935f595a6008
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -5540386194335863434
+    second: golden_skeleton_animation-Sheet_1080p_0
+  - first:
+      213: -1982835809294832456
+    second: golden_skeleton_animation-Sheet_1080p_1
+  - first:
+      213: -6444996578991322802
+    second: golden_skeleton_animation-Sheet_1080p_2
+  - first:
+      213: 6014549663132469488
+    second: golden_skeleton_animation-Sheet_1080p_3
+  - first:
+      213: 3055711331744870489
+    second: golden_skeleton_animation-Sheet_1080p_4
+  - first:
+      213: -5823577191901431386
+    second: golden_skeleton_animation-Sheet_1080p_5
+  - first:
+      213: -947127310523771941
+    second: golden_skeleton_animation-Sheet_1080p_6
+  - first:
+      213: -5824166069449181654
+    second: golden_skeleton_animation-Sheet_1080p_7
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -101,7 +125,175 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: golden_skeleton_animation-Sheet_1080p_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 360
+        height: 324
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67de1284c189c13b0800000000000000
+      internalID: -5540386194335863434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: golden_skeleton_animation-Sheet_1080p_1
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 0
+        width: 360
+        height: 324
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8bcae03465d8b74e0800000000000000
+      internalID: -1982835809294832456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: golden_skeleton_animation-Sheet_1080p_2
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 0
+        width: 360
+        height: 324
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e494d9a22c5ce86a0800000000000000
+      internalID: -6444996578991322802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: golden_skeleton_animation-Sheet_1080p_3
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 0
+        width: 360
+        height: 324
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f8c4fa5d09f77350800000000000000
+      internalID: 6014549663132469488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: golden_skeleton_animation-Sheet_1080p_4
+      rect:
+        serializedVersion: 2
+        x: 1440
+        y: 0
+        width: 360
+        height: 324
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 950f9c03441186a20800000000000000
+      internalID: 3055711331744870489
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: golden_skeleton_animation-Sheet_1080p_5
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 0
+        width: 360
+        height: 324
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a9f5aa066f7e2fa0800000000000000
+      internalID: -5823577191901431386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: golden_skeleton_animation-Sheet_1080p_6
+      rect:
+        serializedVersion: 2
+        x: 2160
+        y: 0
+        width: 360
+        height: 324
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd3d82baab02bd2f0800000000000000
+      internalID: -947127310523771941
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: golden_skeleton_animation-Sheet_1080p_7
+      rect:
+        serializedVersion: 2
+        x: 2520
+        y: 0
+        width: 360
+        height: 324
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a26399d41d76c2fa0800000000000000
+      internalID: -5824166069449181654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []

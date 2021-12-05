@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -24,6 +25,7 @@ public class PlayerController : MonoBehaviour
 
     Vector2 movement;
     public TMP_Text healthText;
+    public Slider healthSlider;
     public float startHealth = 100;
     public float health;
 
@@ -111,7 +113,8 @@ public class PlayerController : MonoBehaviour
         if (!invinsible)
         {
             health -= damageTaken;
-            healthText.text = "Health: " + health;
+            //healthText.text = "Health: " + health;
+            healthSlider.value = health / startHealth;
 
             invinsibilityTimer = 0;
             invinsible = true;

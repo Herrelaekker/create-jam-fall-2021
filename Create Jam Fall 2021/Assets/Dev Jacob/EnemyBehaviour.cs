@@ -38,7 +38,7 @@ public class EnemyBehaviour : MonoBehaviour
         health -= damageTaken;
 
         if (!slider.gameObject.activeSelf)
-            slider.gameObject.SetActive(true);
+            slider.gameObject.SetActive(false);
 
         if (health <= 0)
         {

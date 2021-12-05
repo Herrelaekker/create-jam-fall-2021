@@ -639,13 +639,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startHealth: 5
+  health: 0
   slider: {fileID: 5024616251823115237}
   player: {fileID: 0}
   rb: {fileID: 5024616253407526183}
   moveSpeed: 0.25
   damage: 5
   body: {fileID: 5024616252988004719}
-  TimeBeforeSpawning: 5
+  TimeBeforeSpawning: 12
   enemySpawned: {fileID: 7300856973174968299, guid: 4e5f4dde4f5d167458d964b7a395ce57, type: 3}
   spawnPoints:
   - {fileID: 2123158112914629088}

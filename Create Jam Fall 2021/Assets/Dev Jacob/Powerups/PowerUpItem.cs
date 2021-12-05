@@ -55,7 +55,7 @@ public class PowerUpItem : MonoBehaviour
                 case "Health Rune":
                     pc.startHealth += 25f;
                     pc.health += 25f;
-                    pc.healthText.text = "Health: " + pc.health;
+                    pc.healthSlider.value = pc.health / pc.startHealth;
                     break;
                 case "Big Hammer Rune":
                     pc.hammerRadius += .35f;
