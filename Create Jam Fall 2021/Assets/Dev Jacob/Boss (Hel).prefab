@@ -296,7 +296,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e22c6ac8aec40014fa8063442b6a43aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startHealth: 60
+  startHealth: 100
   health: 0
   slider: {fileID: 0}
   player: {fileID: 0}
@@ -307,31 +307,31 @@ MonoBehaviour:
   lockOnTimePerLevel:
   - 3
   - 2
-  - 2
+  - 1
   waitTimeBeforeChargePerLevel:
   - 1
   - 0.75
   - 0.75
   aggressionLevel: 0
-  agressionChange: 2800000014000000
-  chargesPerLevel: 03000000040000000a000000
+  agressionChange: 500000003c000000
+  chargesPerLevel: 02000000030000000a000000
   laserLifeTime:
   - 1
-  - 0.75
+  - 0.5
   - 0.5
   laserWidth:
   - 0
   - 0
   - 0
   projectilesPerLevel:
-  - 6
-  - 6
+  - 2
+  - 3
   - 6
   spawnTimer: 0
   timeBeforeSpawning:
   - 2
-  - 2
-  - 2
+  - 1.5
+  - 1
   spawnPoints:
   - {fileID: 4870619067475310582}
   - {fileID: 0}

@@ -9,6 +9,8 @@ public class HelProjectile : MonoBehaviour
     public Vector2 dir;
     public float damage = 15f;
 
+    public float lifeTime = 5f;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -28,5 +30,6 @@ public class HelProjectile : MonoBehaviour
     private void FixedUpdate()
     {
         rb.MovePosition(rb.position + dir * speed * Time.fixedDeltaTime);
+        Destroy(gameObject,lifeTime);
     }
 }

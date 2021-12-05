@@ -28,10 +28,14 @@ public class BossBehaviour : EnemyBehaviour
     public GameObject projectilePrefab;
     public float rotationSpeed;
 
+    public Animator anim;
+
     private void Start()
     {
         health = startHealth;
         player = GameObject.FindGameObjectWithTag("Player");
+        slider.gameObject.SetActive(true);
+        slider.value = 1;
     }
 
     private void Update()
@@ -81,8 +85,11 @@ public class BossBehaviour : EnemyBehaviour
         switch (curState)
         {
             case "Charge":
+                anim.SetBool("Shoot", false);
+
                 if (lockOnTimer < lockOnTimePerLevel[aggressionLevel])
                 {
+                    anim.SetBool("Charge", false);
                     dir = player.transform.position - transform.position;
                     float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg - 90;
 
@@ -92,6 +99,7 @@ public class BossBehaviour : EnemyBehaviour
                 }
                 else
                 {
+                    anim.SetBool("Charge", true);
                     if (waitTimer >= waitTimeBeforeChargePerLevel[aggressionLevel])
                     {
                         rb.MovePosition(rb.position + new Vector2(dir.x, dir.y).normalized * chargeSpeed * Time.fixedDeltaTime);
@@ -103,6 +111,8 @@ public class BossBehaviour : EnemyBehaviour
 
                 break;
             case "Shoot":
+                anim.SetBool("Charge", false);
+                anim.SetBool("Shoot", true);
                 body.transform.Rotate(0.0f, 0.0f, Time.fixedDeltaTime*rotationSpeed, Space.Self);
 
                 if (spawnTimer >= timeBeforeSpawning[aggressionLevel])

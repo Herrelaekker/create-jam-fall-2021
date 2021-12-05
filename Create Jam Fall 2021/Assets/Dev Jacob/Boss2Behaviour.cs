@@ -43,6 +43,7 @@ public class Boss2Behaviour : EnemyBehaviour
     {
         health = startHealth;
         player = GameObject.FindGameObjectWithTag("Player");
+        slider.gameObject.SetActive(true);
         slider.value = 1;
     }
 
