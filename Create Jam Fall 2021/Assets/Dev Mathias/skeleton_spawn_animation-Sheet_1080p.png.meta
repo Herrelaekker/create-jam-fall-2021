@@ -1,7 +1,64 @@
 fileFormatVersion: 2
 guid: e934c1f4ea5572d4db9927de1fc03c06
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -8859452238604508371
+    second: skeleton_spawn_animation-Sheet_1080p_0
+  - first:
+      213: 8262347823287943198
+    second: skeleton_spawn_animation-Sheet_1080p_1
+  - first:
+      213: -6644240582060036876
+    second: skeleton_spawn_animation-Sheet_1080p_2
+  - first:
+      213: 7783126988493114156
+    second: skeleton_spawn_animation-Sheet_1080p_3
+  - first:
+      213: 1323886508580658531
+    second: skeleton_spawn_animation-Sheet_1080p_4
+  - first:
+      213: -4736293248720584802
+    second: skeleton_spawn_animation-Sheet_1080p_5
+  - first:
+      213: -781779023144869746
+    second: skeleton_spawn_animation-Sheet_1080p_6
+  - first:
+      213: 553825955850336111
+    second: skeleton_spawn_animation-Sheet_1080p_7
+  - first:
+      213: 5487769930369099376
+    second: skeleton_spawn_animation-Sheet_1080p_8
+  - first:
+      213: 6477020891617384212
+    second: skeleton_spawn_animation-Sheet_1080p_9
+  - first:
+      213: -1657774655072920872
+    second: skeleton_spawn_animation-Sheet_1080p_10
+  - first:
+      213: 3824606541536476203
+    second: skeleton_spawn_animation-Sheet_1080p_11
+  - first:
+      213: -8818109033771591158
+    second: skeleton_spawn_animation-Sheet_1080p_12
+  - first:
+      213: 3332183955911934473
+    second: skeleton_spawn_animation-Sheet_1080p_13
+  - first:
+      213: 953834750890711694
+    second: skeleton_spawn_animation-Sheet_1080p_14
+  - first:
+      213: -7949474827721573884
+    second: skeleton_spawn_animation-Sheet_1080p_15
+  - first:
+      213: -6184556304552593320
+    second: skeleton_spawn_animation-Sheet_1080p_16
+  - first:
+      213: 1612056798103907450
+    second: skeleton_spawn_animation-Sheet_1080p_17
+  - first:
+      213: 5243214860171701401
+    second: skeleton_spawn_animation-Sheet_1080p_18
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -41,7 +98,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -65,7 +122,43 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 4096
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -77,7 +170,406 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: skeleton_spawn_animation-Sheet_1080p_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1944
+        width: 192
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d23607dd027ec0580800000000000000
+      internalID: -8859452238604508371
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skeleton_spawn_animation-Sheet_1080p_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1836
+        width: 192
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e10ccc9c191c9a270800000000000000
+      internalID: 8262347823287943198
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skeleton_spawn_animation-Sheet_1080p_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1728
+        width: 192
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4fca310b46aeac3a0800000000000000
+      internalID: -6644240582060036876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skeleton_spawn_animation-Sheet_1080p_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1620
+        width: 192
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2b43ee52c8330c60800000000000000
+      internalID: 7783126988493114156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skeleton_spawn_animation-Sheet_1080p_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1512
+        width: 192
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36dd1eae3c36f5210800000000000000
+      internalID: 1323886508580658531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skeleton_spawn_animation-Sheet_1080p_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1404
+        width: 192
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9fbded526e454eb0800000000000000
+      internalID: -4736293248720584802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skeleton_spawn_animation-Sheet_1080p_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1296
+        width: 192
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e802998de109625f0800000000000000
+      internalID: -781779023144869746
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skeleton_spawn_animation-Sheet_1080p_7
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1188
+        width: 192
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f67b9d5c5c59fa700800000000000000
+      internalID: 553825955850336111
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skeleton_spawn_animation-Sheet_1080p_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1080
+        width: 192
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07668bc1da9782c40800000000000000
+      internalID: 5487769930369099376
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skeleton_spawn_animation-Sheet_1080p_9
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 972
+        width: 192
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41753a72f2003e950800000000000000
+      internalID: 6477020891617384212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skeleton_spawn_animation-Sheet_1080p_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 864
+        width: 192
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8da9bb60cb66ef8e0800000000000000
+      internalID: -1657774655072920872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skeleton_spawn_animation-Sheet_1080p_11
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 756
+        width: 192
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2cbae9c26bb31530800000000000000
+      internalID: 3824606541536476203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skeleton_spawn_animation-Sheet_1080p_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 648
+        width: 192
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0a916bdd88cf9580800000000000000
+      internalID: -8818109033771591158
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skeleton_spawn_animation-Sheet_1080p_13
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 540
+        width: 192
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 902036a37ab4e3e20800000000000000
+      internalID: 3332183955911934473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skeleton_spawn_animation-Sheet_1080p_14
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 432
+        width: 192
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8a934df6a3bc3d00800000000000000
+      internalID: 953834750890711694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skeleton_spawn_animation-Sheet_1080p_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 324
+        width: 192
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40afeb623cacda190800000000000000
+      internalID: -7949474827721573884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skeleton_spawn_animation-Sheet_1080p_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 216
+        width: 192
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8587db5eeca0c2aa0800000000000000
+      internalID: -6184556304552593320
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skeleton_spawn_animation-Sheet_1080p_17
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 108
+        width: 192
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7cacb8ed1d2f5610800000000000000
+      internalID: 1612056798103907450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: skeleton_spawn_animation-Sheet_1080p_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 192
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99c6595b224a3c840800000000000000
+      internalID: 5243214860171701401
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []

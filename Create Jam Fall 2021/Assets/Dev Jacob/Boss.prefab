@@ -92,6 +92,7 @@ MonoBehaviour:
   moveSpeed: 1
   damage: 10
   body: {fileID: 16408975153680047}
+  invulnerable: 0
   lockOnTimePerLevel:
   - 2
   - 1
