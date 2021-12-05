@@ -267,10 +267,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   floorSizeX: 20
   floorSizeY: 20
-  floorRoomMin: 15
-  floorRoomMax: 27
+  floorRoomMin: 5
+  floorRoomMax: 7
   targetRoomCount: 0
-  maxAttempts: 500
+  maxAttempts: 50
   failedAttempts: 0
   startRoom: {fileID: 0}
   floorRooms: []
@@ -282,11 +282,7 @@ MonoBehaviour:
   - {fileID: 4749674876440654648, guid: a74672633b0822248846b057bfcdf0c0, type: 3}
   specialRoomPrefabs:
   - {fileID: 2310862640575566366, guid: d2f3215dd3894bd4a9e7449f2deae842, type: 3}
-  - {fileID: 2310862640575566366, guid: d2f3215dd3894bd4a9e7449f2deae842, type: 3}
-  - {fileID: 2310862640575566366, guid: d2f3215dd3894bd4a9e7449f2deae842, type: 3}
-  - {fileID: 2310862640575566366, guid: d2f3215dd3894bd4a9e7449f2deae842, type: 3}
-  - {fileID: 2310862640575566366, guid: d2f3215dd3894bd4a9e7449f2deae842, type: 3}
-  bossRoomPrefab: {fileID: 788523450627393961, guid: 57fe0a65d39b4b145bf3151f7ae0b1d2, type: 3}
+  bossRoomPrefab: {fileID: 788523450627393961, guid: 4a4b9bf19f3a08e45bf35685f84d6839, type: 3}
 --- !u!4 &1363084307
 Transform:
   m_ObjectHideFlags: 0

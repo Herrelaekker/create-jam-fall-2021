@@ -52,6 +52,11 @@ public class Boss2Behaviour : EnemyBehaviour
 
     }
 
+    private void OnDestroy()
+    {
+        Destroy(transform.parent.gameObject);
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Wall")

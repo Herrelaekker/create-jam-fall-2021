@@ -59,4 +59,9 @@ public class BossRoomManager : RoomManager
             doorway.OpenDoor();
         }
     }
+
+    public override bool TestAvailableConnections()
+    {
+        return false;
+    }
 }
