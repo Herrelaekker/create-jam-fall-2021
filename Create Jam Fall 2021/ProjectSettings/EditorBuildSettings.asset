@@ -24,6 +24,9 @@ EditorBuildSettings:
     path: Assets/Dev Jacob/Ending.unity
     guid: 4cdb33505af5eb343a572f6bf042a0ae
   - enabled: 1
+    path: Assets/Dev Jacob/Death.unity
+    guid: 5f7d140350c1abc4bbd2a21c018b8c62
+  - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   m_configObjects: {}

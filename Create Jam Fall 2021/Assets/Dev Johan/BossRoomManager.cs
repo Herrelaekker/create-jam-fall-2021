@@ -28,6 +28,7 @@ public class BossRoomManager : RoomManager
         {
             bossAlive = false;
             startTimer = true;
+            GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().SaveStats();
             UnlockDoors();
         }
 

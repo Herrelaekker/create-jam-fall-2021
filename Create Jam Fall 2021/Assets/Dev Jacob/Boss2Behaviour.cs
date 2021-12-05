@@ -38,6 +38,11 @@ public class Boss2Behaviour : EnemyBehaviour
     public Sprite chargedUpSprite;
     public Sprite normalSprite;
     public SpriteRenderer se;
+    bool spawnEnemies;
+    List<GameObject> enemiesSpawned = new List<GameObject>();
+    public GameObject enemySpawned;
+    public GameObject forcefield;
+    bool forcefieldPartDone = false;
 
     private void Start()
     {
@@ -87,16 +92,23 @@ public class Boss2Behaviour : EnemyBehaviour
 
         
 
-        if (aggressionLevel != 2)
+        if (aggressionLevel != 3)
         {
             if (health <= agressionChange[aggressionLevel])
                 aggressionLevel++;
 
         }
 
-        if (aggressionLevel >= 2)
+        if (aggressionLevel == 2)
             curState = "Both";
 
+        if (aggressionLevel >= 3 && !forcefieldPartDone)
+        {
+            curState = "Spawn";
+            spawnEnemies = true;
+        }
+        else if (forcefieldPartDone)
+            curState = "Both";
     }
 
     private void FixedUpdate()
@@ -315,6 +327,40 @@ public class Boss2Behaviour : EnemyBehaviour
 
                 break;
 
+                
+
+        }
+
+        if (spawnEnemies)
+        {
+            if (!forcefield.activeSelf)
+                forcefield.SetActive(true);
+
+            if (!invulnerable)
+            {
+                invulnerable = true;
+
+
+                for (int i = 10; i < 16; i++)
+                {
+                    var enemy = Instantiate(enemySpawned, spawnPoints[i]);
+                    enemiesSpawned.Add(enemy);
+                    enemy.transform.rotation = Quaternion.Euler(0, 0, 0);
+                    enemy.transform.parent = transform.parent;
+                }
+            }
+
+            for (int i = 0; i < enemiesSpawned.Count; i++)
+                if (!enemiesSpawned[i])
+                    enemiesSpawned.Remove(enemiesSpawned[i]);
+
+            if (enemiesSpawned.Count <= 0)
+            {
+                invulnerable = false;
+                forcefield.SetActive(false);
+                spawnEnemies = false;
+                forcefieldPartDone = true;
+            }
         }
 
 

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -32,13 +33,24 @@ public class PlayerController : MonoBehaviour
     public float timeBeforeHammerBack = 1f;
     public float hammerRadius = 1f;
 
+    PlayerStats ps;
+
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         health = startHealth;
         sr = GetComponent<SpriteRenderer>();
-    }
+
+        ps = GameObject.Find("PlayerStats").GetComponent<PlayerStats>();
+        damage = ps.damage;
+        timeBeforeHammerBack = ps.timeBeforeHammerBack;
+        moveSpeed = ps.moveSpeed;
+        shootDistance = ps.shootDistance;
+        startHealth = ps.startHealth;
+        health = ps.health;
+        hammerRadius = ps.hammerRadius;
+}
 
     private void OnTriggerStay2D (Collider2D collision)
     {
@@ -117,11 +129,26 @@ public class PlayerController : MonoBehaviour
 
             invinsibilityTimer = 0;
             invinsible = true;
+
+            if (health <= 0)
+                SceneManager.LoadScene("Death");
         }
     }
 
     private void FixedUpdate()
     {
         rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
+    }
+
+
+    public void SaveStats()
+    {
+        ps.ChangeStats(damage,
+        timeBeforeHammerBack,
+        moveSpeed,
+        shootDistance,
+        startHealth,
+        health,
+        hammerRadius);
     }
 }
