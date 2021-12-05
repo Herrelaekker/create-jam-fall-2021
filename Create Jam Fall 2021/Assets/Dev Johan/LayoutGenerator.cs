@@ -9,7 +9,10 @@ public class LayoutGenerator : MonoBehaviour
     public int floorRoomMin;
     public int floorRoomMax;
 
-    public int targetRoomCount;
+	public int positionMultiplierX;
+	public int positionMultiplierY;
+
+	public int targetRoomCount;
 	public int maxAttempts;
 	public int failedAttempts;
 
@@ -47,7 +50,7 @@ public class LayoutGenerator : MonoBehaviour
 		startRoom.roomYpos = Random.Range(floorSizeY / 4, floorSizeY - floorSizeY / 4);
 
 		startRoom.transform.name = "Room_" + startRoom.roomXpos + ":" + startRoom.roomYpos + " _" + startRoom.name;
-		startRoom.transform.position = new Vector3(transform.position.x + startRoom.roomXpos * 20, transform.position.y + startRoom.roomYpos * 15, 0);
+		startRoom.transform.position = new Vector3(transform.position.x + startRoom.roomXpos * positionMultiplierX, transform.position.y + startRoom.roomYpos * positionMultiplierY, 0);
 		startRoom.transform.parent = transform;
 
 		floorRooms.Add(startRoom);
@@ -259,7 +262,7 @@ public class LayoutGenerator : MonoBehaviour
 		newRoom.roomXpos = roomToGenerateFrom.roomXpos + Xoffset;
 		newRoom.roomYpos = roomToGenerateFrom.roomYpos + Yoffset;
 
-		newRoom.transform.position = new Vector3(transform.position.x + newRoom.roomXpos * 20, transform.position.y + newRoom.roomYpos * 15, 0);
+		newRoom.transform.position = new Vector3(transform.position.x + newRoom.roomXpos * positionMultiplierX, transform.position.y + newRoom.roomYpos * positionMultiplierY, 0);
 		newRoom.transform.parent = transform;
 
 		newRoom.name = "Room_" + newRoom.roomXpos + ":" + newRoom.roomYpos + "_" + roomPrefab.name;
@@ -293,6 +296,29 @@ public class LayoutGenerator : MonoBehaviour
 		if (testRoom.roomYpos == 0)
 			testRoom.CloseConnection(3);
 	}
+
+	public List<RoomManager> GetSurroundingRooms(RoomManager room)
+    {
+		List<RoomManager> roomList = new List<RoomManager>();
+
+		for (int x = room.roomXpos - 1; x <= room.roomXpos + 1; x++)
+			for (int y = room.roomYpos - 1; y <= room.roomYpos + 1; y++)
+            {
+				if (x != 2 && y != 2)
+				{
+					try
+					{
+						if (floorLayout[x, y] != null)
+						{
+							roomList.Add(floorLayout[x, y]);
+						}
+
+					}
+					catch { }
+				}
+            }
+		return roomList;
+    }
 
 	public int CountAdjacentRooms(RoomManager roomToCountFor, int Xoffset, int Yoffset)
 	{

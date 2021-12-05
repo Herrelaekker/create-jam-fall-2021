@@ -5,7 +5,10 @@ using UnityEngine;
 public class DungeonManager : MonoBehaviour
 {
     public GameObject player;
+
     public GameObject dungeonCamera;
+    public GameObject minimapCamera;
+
     public RoomManager currentRoom;
 
     public Vector3 roomCamPos;
@@ -23,6 +26,9 @@ public class DungeonManager : MonoBehaviour
             player.transform.position = currentRoom.transform.position;
             roomCamPos = currentRoom.transform.position + new Vector3(0, 0, -10);
             dungeonCamera.transform.position = roomCamPos;
+            minimapCamera.transform.position = roomCamPos;
+
+            RevealNearbyRoomsOnMap(currentRoom);
         }
     }
 
@@ -41,6 +47,7 @@ public class DungeonManager : MonoBehaviour
                 //dungeonCamera.transform.position = roomCamPos;
                 dungeonCamera.transform.position = Vector3.Slerp(dunCamPos, roomCamPos, 10f * Time.deltaTime);
             }
+            minimapCamera.transform.position = dungeonCamera.transform.position;
         }
     }
 
@@ -64,5 +71,18 @@ public class DungeonManager : MonoBehaviour
 
         currentRoom = roomTransitionTo.GetComponent<RoomManager>();
         currentRoom.EnterRoom();
+
+        currentRoom.RevealOnMap(true);
+        RevealNearbyRoomsOnMap(currentRoom);
+    }
+
+    public void RevealNearbyRoomsOnMap(RoomManager playerRoom)
+    {
+        List<RoomManager> surroundingRooms = layoutGenerator.GetSurroundingRooms(playerRoom);
+        foreach (RoomManager room in surroundingRooms)
+        {
+            room.RevealOnMap(false);
+        }
+        playerRoom.RevealOnMap(true);
     }
 }

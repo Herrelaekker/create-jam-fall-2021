@@ -12,11 +12,41 @@ public abstract class RoomManager : MonoBehaviour
     //A value of 0 means open, 1 means closed
     public int[] roomConnections = new int[] { 0, 0, 0, 0 };
     public List<DoorwayTransition> doorways;
+    public SpriteRenderer mapFloor;
 
     public virtual void InitiateRoom()
     {
         doorways.Clear();
         doorways.AddRange(transform.GetComponentsInChildren<DoorwayTransition>());
+
+        Color floorColor = mapFloor.color;
+        floorColor.a = 0;
+        mapFloor.color = floorColor;
+    }
+
+    public void RevealOnMap(bool fullReveal)
+    {
+        Debug.Log(transform.name + "_" + mapFloor.color.a);
+
+        if(fullReveal)
+        {
+            Color floorColor = mapFloor.color;
+            if(floorColor.a < 1f)
+            {
+                floorColor.a = 1f;
+                mapFloor.color = floorColor;
+            }
+        }
+        else
+        {
+            Color floorColor = mapFloor.color;
+            if (floorColor.a < .8f)
+            {
+                floorColor.a = .8f;
+                mapFloor.color = floorColor;
+            }
+        }
+        Debug.Log(transform.name + "_" + mapFloor.color.a);
     }
 
     public virtual void EnterRoom() { }
