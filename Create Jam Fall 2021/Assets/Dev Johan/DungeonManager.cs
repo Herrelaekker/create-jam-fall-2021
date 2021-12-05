@@ -15,7 +15,7 @@ public class DungeonManager : MonoBehaviour
     {
         if(layoutGenerator != null)
         {
-            layoutGenerator.CreateFloor();
+            layoutGenerator.GenerateFloorLayout();
             currentRoom = layoutGenerator.startRoom;
 
             player.transform.position = currentRoom.transform.position;
@@ -36,11 +36,6 @@ public class DungeonManager : MonoBehaviour
 
         if (Mathf.Abs(playerRelativePos.x) > 4)
         {
-            Debug.Log(transitionRoomPos);
-            Debug.Log(playerRelativePos);
-            Debug.Log(player.transform.position);
-            Debug.Log(roomTransitionTo.transform.position);
-            Debug.Log(transitionRoomPos + new Vector3(-playerRelativePos.x, playerRelativePos.y, 0));
             player.transform.position = transitionRoomPos + new Vector3(-playerRelativePos.x, playerRelativePos.y, 0);
             dungeonCamera.transform.position = transitionRoomPos + new Vector3(0, 0, -10);
         }

@@ -13,7 +13,11 @@ public abstract class RoomManager : MonoBehaviour
     public int[] roomConnections = new int[] { 0, 0, 0, 0 };
     public List<DoorwayTransition> doorways;
 
-    public abstract void InitiateRoom();
+    public virtual void InitiateRoom()
+    {
+        doorways.Clear();
+        doorways.AddRange(transform.GetComponentsInChildren<DoorwayTransition>());
+    }
 
     public virtual void EnterRoom() { }
     public virtual void LockDoors() { }

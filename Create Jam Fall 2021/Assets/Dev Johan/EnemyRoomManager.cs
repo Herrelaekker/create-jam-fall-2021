@@ -5,10 +5,8 @@ using UnityEngine;
 
 public class EnemyRoomManager : RoomManager
 {
-    
-
     public bool hasBeenCleared;
-    public bool clearingRoom;
+    public bool enemyBattle;
 
     public Transform roomEnemies;
     public List<Transform> enemies;
@@ -17,11 +15,10 @@ public class EnemyRoomManager : RoomManager
     // Start is called before the first frame update
     public override void InitiateRoom()
     {
-        hasBeenCleared = false;
-        clearingRoom = false;
+        base.InitiateRoom();
 
-        doorways.Clear();
-        doorways.AddRange(transform.GetComponentsInChildren<DoorwayTransition>());
+        hasBeenCleared = false;
+        enemyBattle = false;
 
         enemies.Clear();
         foreach (Transform child in roomEnemies)
@@ -45,11 +42,11 @@ public class EnemyRoomManager : RoomManager
     // Update is called once per frame
     void Update()
     {
-        if(clearingRoom)
+        if(enemyBattle)
         {
             if(roomEnemies.childCount == 0)
             {
-                clearingRoom = false;
+                enemyBattle = false;
                 hasBeenCleared = true;
                 UnlockDoors();
             }
@@ -60,7 +57,7 @@ public class EnemyRoomManager : RoomManager
     {
         if(!hasBeenCleared)
         {
-            clearingRoom = true;
+            enemyBattle = true;
             SpawnEnemies();
             LockDoors();
         }

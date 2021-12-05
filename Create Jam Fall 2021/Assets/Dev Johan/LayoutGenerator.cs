@@ -20,11 +20,26 @@ public class LayoutGenerator : MonoBehaviour
     public GameObject startRoomPrefab;
     public GameObject[] enemyRoomPrefabs;
     public GameObject[] specialRoomPrefabs;
+	public GameObject bossRoomPrefab;
 
-	public void CreateFloor()
+
+	public void GenerateFloorLayout()
 	{
 		floorLayout = new RoomManager[floorSizeX, floorSizeY];
 
+		GenerateStartRoom();
+		GenerateEnemyRooms();
+		GenerateSpecialRooms();
+		GenerateBossRoom();
+
+		foreach (RoomManager room in floorRooms)
+		{
+			room.CloseUnusedDoors();
+		}
+	}
+
+	public void GenerateStartRoom()
+    {
 		startRoom = (Instantiate(startRoomPrefab) as GameObject).GetComponent<RoomManager>();
 		startRoom.InitiateRoom();
 
@@ -37,17 +52,10 @@ public class LayoutGenerator : MonoBehaviour
 
 		floorRooms.Add(startRoom);
 		floorLayout[startRoom.roomXpos, startRoom.roomYpos] = startRoom;
-
-		GenerateBaseLayout();
-
-		foreach(RoomManager room in floorRooms)
-        {
-			room.CloseUnusedDoors();
-        }
 	}
 
-	public void GenerateBaseLayout()
-    {
+	public void GenerateEnemyRooms()
+	{
 		targetRoomCount = Random.Range(floorRoomMin, floorRoomMax + 1);
 		List<RoomManager> validRoomsToGenerateFrom = new List<RoomManager>();
 		validRoomsToGenerateFrom.Add(startRoom);
@@ -130,10 +138,10 @@ public class LayoutGenerator : MonoBehaviour
 			{
 				validRoomsToGenerateFrom.Add(newRoom);
 			}
-            else
-            {
+			else
+			{
 				failedAttempts++;
-            }
+			}
 
 			if (roomToGenerateFrom.TestAvailableConnections() == false)
 			{
@@ -141,7 +149,10 @@ public class LayoutGenerator : MonoBehaviour
 			}
 		}
 		Debug.Log("Failed attempts to generate layout: " + failedAttempts);
+	}
 
+	public void GenerateSpecialRooms()
+	{ 
 		foreach (GameObject room in specialRoomPrefabs)
 		{
 			bool generateSuccess = false;
@@ -204,6 +215,27 @@ public class LayoutGenerator : MonoBehaviour
                     {
 						newRoom.CloseUnusedDoors();
                     }
+				}
+			}
+		}
+	}
+
+	public void GenerateBossRoom()
+    {
+		bool bossRoomGenerated = false;
+		while (!bossRoomGenerated)
+		{
+			RoomManager roomToGenerateFrom = floorRooms[Random.Range(0, floorRooms.Count)];
+
+			if (roomToGenerateFrom.GetComponent<EnemyRoomManager>())
+			{
+				int direction = roomToGenerateFrom.GetAvailableDoor();
+
+				if (direction == 1)
+				{
+					RoomManager newRoom = GenerateRoom(bossRoomPrefab.gameObject, roomToGenerateFrom, direction, 0, +1);
+					bossRoomGenerated = true;
+					newRoom.CloseUnusedDoors();
 				}
 			}
 		}
