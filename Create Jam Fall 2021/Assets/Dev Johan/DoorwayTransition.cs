@@ -7,6 +7,7 @@ public class DoorwayTransition : MonoBehaviour
     public GameObject roomTransitionTo;
     public GameObject doorBlock;
     private Animator anim;
+    bool locked = false;
 
     private void Awake()
     {
@@ -19,7 +20,8 @@ public class DoorwayTransition : MonoBehaviour
         {
             if (roomTransitionTo != null)
             {
-                FindObjectOfType<DungeonManager>().RoomTransition(roomTransitionTo);
+                if (!locked)
+                    FindObjectOfType<DungeonManager>().RoomTransition(roomTransitionTo);
             }
         }
     }
@@ -28,6 +30,7 @@ public class DoorwayTransition : MonoBehaviour
     {
         //this.gameObject.SetActive(false);
         doorBlock.SetActive(true);
+        locked = true;
         anim.SetBool("Open", false);
         anim.SetBool("Close", true);
     }
@@ -36,6 +39,7 @@ public class DoorwayTransition : MonoBehaviour
     {
         //this.gameObject.SetActive(true);
         doorBlock.SetActive(false);
+        locked = false;
         anim.SetBool("Open", true);
         anim.SetBool("Close", false);
     }

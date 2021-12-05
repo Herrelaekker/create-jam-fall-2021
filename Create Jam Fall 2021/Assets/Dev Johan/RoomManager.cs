@@ -73,6 +73,7 @@ public abstract class RoomManager : MonoBehaviour
             if (doorways[x].roomTransitionTo == null)
             {
                 doorways[x].CloseDoor();
+                doorways[x].gameObject.SetActive(false);
                 doorways.RemoveAt(x);
                 x--;
             }
