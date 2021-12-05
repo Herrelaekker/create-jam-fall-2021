@@ -646,8 +646,9 @@ MonoBehaviour:
   moveSpeed: 0.25
   damage: 5
   body: {fileID: 5024616252988004719}
+  invulnerable: 0
   TimeBeforeSpawning: 12
-  enemySpawned: {fileID: 7300856973174968299, guid: 4e5f4dde4f5d167458d964b7a395ce57, type: 3}
+  enemySpawned: {fileID: 6131317510141850714, guid: b7a6a82f499623d4d876ee4867f59461, type: 3}
   spawnPoints:
   - {fileID: 2123158112914629088}
   - {fileID: 2123158113373208058}

@@ -72,7 +72,7 @@ public class PlayerController : MonoBehaviour
         Quaternion lookRotation = Quaternion.AngleAxis(angle, Vector3.forward);
         transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, 1000);
 
-        if (Input.GetMouseButtonDown(0) && !hammerOut)
+        if (Input.GetMouseButton(0) && !hammerOut)
         {
             var hammer = Instantiate(hammerProjectile, shootTransform);
             hammer.transform.parent = null;

@@ -12,4 +12,9 @@ public class EnemySpawned : MonoBehaviour
         enemy.transform.rotation = Quaternion.Euler(0, 0, 0);
         enemy.transform.parent = transform.parent;
     }
+
+    public void DestroyThis()
+    {
+        Destroy(gameObject);
+    }
 }
