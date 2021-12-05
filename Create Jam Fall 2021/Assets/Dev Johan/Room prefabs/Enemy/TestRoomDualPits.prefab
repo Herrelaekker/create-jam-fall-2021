@@ -1338,6 +1338,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1642168800166561219}
   - component: {fileID: 7454633635485874605}
+  - component: {fileID: 3933941037039254168}
   m_Layer: 0
   m_Name: Pit_1080p
   m_TagString: Untagged
@@ -1410,6 +1411,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!58 &3933941037039254168
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4610682792407918238}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.0000019073486, y: 0.0000009536743}
+  serializedVersion: 2
+  m_Radius: 0.62
 --- !u!1 &5215882875956693448
 GameObject:
   m_ObjectHideFlags: 0
@@ -2035,6 +2052,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1819403477041220586}
   - component: {fileID: 1629467274009387717}
+  - component: {fileID: 1138943464018261916}
   m_Layer: 0
   m_Name: Pit_1080p
   m_TagString: Untagged
@@ -2107,6 +2125,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!58 &1138943464018261916
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8802730364721336508}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.63
 --- !u!1 &9213813609297704652
 GameObject:
   m_ObjectHideFlags: 0

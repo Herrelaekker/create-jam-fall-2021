@@ -115,6 +115,7 @@ Transform:
   m_LocalScale: {x: 1, y: 10, z: 1}
   m_Children:
   - {fileID: 8213041540322896292}
+  - {fileID: 305744611185420384}
   - {fileID: 9147378551411631239}
   - {fileID: 4386237226233045387}
   m_Father: {fileID: 359299691223972657}
@@ -481,6 +482,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1364224874147675073}
   - component: {fileID: 4856863584254119743}
+  - component: {fileID: 446045118720029594}
   m_Layer: 0
   m_Name: Stone_1080p (15)
   m_TagString: Untagged
@@ -553,6 +555,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!58 &446045118720029594
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 525134206829521555}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.69
 --- !u!1 &544999502509785231
 GameObject:
   m_ObjectHideFlags: 0
@@ -563,6 +581,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9094528499920210892}
   - component: {fileID: 6606282797057425649}
+  - component: {fileID: 4647313193405206468}
   m_Layer: 0
   m_Name: Stone_1080p
   m_TagString: Untagged
@@ -635,6 +654,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!58 &4647313193405206468
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 544999502509785231}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.69
 --- !u!1 &980461494557730849
 GameObject:
   m_ObjectHideFlags: 0
@@ -687,6 +722,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4213649137767045953}
   - component: {fileID: 127591698337543008}
+  - component: {fileID: 8649478222195433350}
   m_Layer: 0
   m_Name: Stone_1080p (7)
   m_TagString: Untagged
@@ -759,6 +795,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!58 &8649478222195433350
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1116273388734980480}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.69
 --- !u!1 &1138128571756555956
 GameObject:
   m_ObjectHideFlags: 0
@@ -878,6 +930,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8008174349250394286}
   - component: {fileID: 3487780174266558221}
+  - component: {fileID: 2199891205273259572}
   m_Layer: 0
   m_Name: Stone_1080p (5)
   m_TagString: Untagged
@@ -950,6 +1003,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!58 &2199891205273259572
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1212393021639254159}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.69
 --- !u!1 &1363709016416363343
 GameObject:
   m_ObjectHideFlags: 0
@@ -960,6 +1029,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8628619712352627862}
   - component: {fileID: 927706884146880113}
+  - component: {fileID: 4501296826527276748}
   m_Layer: 0
   m_Name: Stone_1080p (16)
   m_TagString: Untagged
@@ -1032,6 +1102,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!58 &4501296826527276748
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1363709016416363343}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.69
 --- !u!1 &1797814692768694028
 GameObject:
   m_ObjectHideFlags: 0
@@ -1151,6 +1237,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8655988356984123338}
   - component: {fileID: 6347236003798791345}
+  - component: {fileID: 8745915248924438783}
   m_Layer: 0
   m_Name: Stone_1080p (12)
   m_TagString: Untagged
@@ -1223,6 +1310,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!58 &8745915248924438783
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2480631281268997100}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.69
 --- !u!1 &2857699209234358559
 GameObject:
   m_ObjectHideFlags: 0
@@ -1342,6 +1445,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3650288940653111432}
   - component: {fileID: 7745664524753489644}
+  - component: {fileID: 3760379391054016827}
   m_Layer: 0
   m_Name: Stone_1080p (11)
   m_TagString: Untagged
@@ -1414,6 +1518,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!58 &3760379391054016827
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3448330987964572472}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.69
 --- !u!1 &3584327165061290984
 GameObject:
   m_ObjectHideFlags: 0
@@ -1424,6 +1544,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2382034143209052497}
   - component: {fileID: 367146508899539741}
+  - component: {fileID: 7796502491283174685}
   m_Layer: 0
   m_Name: Stone_1080p (10)
   m_TagString: Untagged
@@ -1496,6 +1617,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!58 &7796502491283174685
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3584327165061290984}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.69
 --- !u!1 &3877047375739123145
 GameObject:
   m_ObjectHideFlags: 0
@@ -1616,6 +1753,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2332622016348189414}
   - component: {fileID: 8387049723226173953}
+  - component: {fileID: 3223045290233916793}
   m_Layer: 0
   m_Name: Stone_1080p (4)
   m_TagString: Untagged
@@ -1688,6 +1826,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!58 &3223045290233916793
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3893003693562576932}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.69
 --- !u!1 &3992724850560772028
 GameObject:
   m_ObjectHideFlags: 0
@@ -2233,6 +2387,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8798693385965725345}
   - component: {fileID: 6548934118563838660}
+  - component: {fileID: 7202267711909574660}
   m_Layer: 0
   m_Name: Stone_1080p (9)
   m_TagString: Untagged
@@ -2305,6 +2460,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!58 &7202267711909574660
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5641136654254985523}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.69
 --- !u!1 &5748530948634872523
 GameObject:
   m_ObjectHideFlags: 0
@@ -2315,6 +2486,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2309547180800096676}
   - component: {fileID: 6860559231981632954}
+  - component: {fileID: 4062850220995362043}
   m_Layer: 0
   m_Name: Stone_1080p (14)
   m_TagString: Untagged
@@ -2387,6 +2559,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!58 &4062850220995362043
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5748530948634872523}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.69
 --- !u!1 &5761033488624882225
 GameObject:
   m_ObjectHideFlags: 0
@@ -2479,6 +2667,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1857260904421963206}
   - component: {fileID: 5478410042492086238}
+  - component: {fileID: 8637619012158995411}
   m_Layer: 0
   m_Name: Stone_1080p (13)
   m_TagString: Untagged
@@ -2551,6 +2740,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!58 &8637619012158995411
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6222482224406121827}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.69
 --- !u!1 &6342481824270731049
 GameObject:
   m_ObjectHideFlags: 0
@@ -2670,6 +2875,7 @@ GameObject:
   m_Component:
   - component: {fileID: 413215920682509333}
   - component: {fileID: 7083876717687860000}
+  - component: {fileID: 3631923943004668933}
   m_Layer: 0
   m_Name: Stone_1080p (6)
   m_TagString: Untagged
@@ -2742,6 +2948,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!58 &3631923943004668933
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7091175186554538182}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.69
 --- !u!1 &7480489455151775946
 GameObject:
   m_ObjectHideFlags: 0
@@ -2876,6 +3098,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8591538209486054406}
   - component: {fileID: 4946586189313785527}
+  - component: {fileID: 7418839220107798659}
   m_Layer: 0
   m_Name: Stone_1080p (2)
   m_TagString: Untagged
@@ -2948,6 +3171,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!58 &7418839220107798659
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7713741938397838457}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.69
 --- !u!1 &7781087004540810534
 GameObject:
   m_ObjectHideFlags: 0
@@ -2958,6 +3197,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8875435567194473674}
   - component: {fileID: 7348308077648207839}
+  - component: {fileID: 8618562216862064987}
   m_Layer: 0
   m_Name: Stone_1080p (1)
   m_TagString: Untagged
@@ -3030,6 +3270,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!58 &8618562216862064987
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7781087004540810534}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.69
 --- !u!1 &7794412839352096355
 GameObject:
   m_ObjectHideFlags: 0
@@ -3139,6 +3395,115 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!1 &8085402158556417778
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 305744611185420384}
+  - component: {fileID: 4984574136170273933}
+  - component: {fileID: 181355226211275974}
+  m_Layer: 0
+  m_Name: Part2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &305744611185420384
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8085402158556417778}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.334, z: 0}
+  m_LocalScale: {x: 1, y: 0.4, z: 1}
+  m_Children: []
+  m_Father: {fileID: 359299690842467822}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &4984574136170273933
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8085402158556417778}
+  m_Enabled: 0
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 2109146237
+  m_SortingLayer: -3
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!61 &181355226211275974
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8085402158556417778}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!1 &8763355532526634719
 GameObject:
   m_ObjectHideFlags: 0
@@ -3169,7 +3534,7 @@ Transform:
   m_LocalScale: {x: 1, y: 0.2, z: 1}
   m_Children: []
   m_Father: {fileID: 359299690842467822}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &7947806340666313116
 SpriteRenderer:
@@ -3852,6 +4217,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4672819123293474688}
   - component: {fileID: 3507897810983658970}
+  - component: {fileID: 7363090803849825583}
   m_Layer: 0
   m_Name: Stone_1080p (17)
   m_TagString: Untagged
@@ -3924,6 +4290,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!58 &7363090803849825583
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8857924587748784684}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.69
 --- !u!1 &9009486362638268397
 GameObject:
   m_ObjectHideFlags: 0
@@ -3934,6 +4316,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3748829370288972156}
   - component: {fileID: 546324053264976148}
+  - component: {fileID: 7327645833507553947}
   m_Layer: 0
   m_Name: Stone_1080p (3)
   m_TagString: Untagged
@@ -4006,6 +4389,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!58 &7327645833507553947
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9009486362638268397}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.69
 --- !u!1 &9129865023967181475
 GameObject:
   m_ObjectHideFlags: 0
@@ -4016,6 +4415,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1752860587142518249}
   - component: {fileID: 6729596796902832908}
+  - component: {fileID: 3854822182081169759}
   m_Layer: 0
   m_Name: Stone_1080p (8)
   m_TagString: Untagged
@@ -4088,6 +4488,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!58 &3854822182081169759
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9129865023967181475}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.69
 --- !u!1001 &909003054969508210
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5085,7 +5501,7 @@ PrefabInstance:
       objectReference: {fileID: 8763355532526634719}
     - target: {fileID: 6561465391478881025, guid: 68ebcb6e4a8d90f43b07d5e3871506c6, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6561465391478881025, guid: 68ebcb6e4a8d90f43b07d5e3871506c6, type: 3}
       propertyPath: m_LocalPosition.x
