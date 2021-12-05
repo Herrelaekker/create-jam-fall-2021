@@ -29,8 +29,8 @@ public class LayoutGenerator : MonoBehaviour
 
 		GenerateStartRoom();
 		GenerateEnemyRooms();
-		GenerateSpecialRooms();
 		GenerateBossRoom();
+		GenerateSpecialRooms();
 
 		foreach (RoomManager room in floorRooms)
 		{
@@ -233,9 +233,14 @@ public class LayoutGenerator : MonoBehaviour
 
 				if (direction == 1)
 				{
-					RoomManager newRoom = GenerateRoom(bossRoomPrefab.gameObject, roomToGenerateFrom, direction, 0, +1);
-					bossRoomGenerated = true;
-					newRoom.CloseUnusedDoors();
+					if (
+								roomToGenerateFrom.roomYpos > 0
+								&& floorLayout[roomToGenerateFrom.roomXpos, roomToGenerateFrom.roomYpos - 1] == null)
+					{
+						RoomManager newRoom = GenerateRoom(bossRoomPrefab.gameObject, roomToGenerateFrom, direction, 0, +1);
+						bossRoomGenerated = true;
+						newRoom.CloseUnusedDoors();
+					}
 				}
 			}
 		}

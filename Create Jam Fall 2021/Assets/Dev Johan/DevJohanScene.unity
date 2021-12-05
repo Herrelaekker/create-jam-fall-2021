@@ -220,6 +220,7 @@ MonoBehaviour:
   player: {fileID: 2019756660}
   dungeonCamera: {fileID: 1766826156}
   currentRoom: {fileID: 0}
+  roomCamPos: {x: 0, y: 0, z: 0}
   layoutGenerator: {fileID: 1363084306}
 --- !u!4 &981182016
 Transform:
@@ -264,9 +265,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db7ffaddac84c084db6dbc95b8645425, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  floorSizeX: 10
-  floorSizeY: 10
-  floorRoomMin: 22
+  floorSizeX: 20
+  floorSizeY: 20
+  floorRoomMin: 15
   floorRoomMax: 27
   targetRoomCount: 0
   maxAttempts: 500
@@ -285,7 +286,7 @@ MonoBehaviour:
   - {fileID: 2310862640575566366, guid: d2f3215dd3894bd4a9e7449f2deae842, type: 3}
   - {fileID: 2310862640575566366, guid: d2f3215dd3894bd4a9e7449f2deae842, type: 3}
   - {fileID: 2310862640575566366, guid: d2f3215dd3894bd4a9e7449f2deae842, type: 3}
-  - {fileID: 2310862640575566366, guid: d2f3215dd3894bd4a9e7449f2deae842, type: 3}
+  bossRoomPrefab: {fileID: 788523450627393961, guid: 57fe0a65d39b4b145bf3151f7ae0b1d2, type: 3}
 --- !u!4 &1363084307
 Transform:
   m_ObjectHideFlags: 0

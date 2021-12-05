@@ -159,7 +159,7 @@ MonoBehaviour:
   roomYpos: 0
   roomConnections: 00000000000000000000000000000000
   doorways: []
-  TheBoss: {fileID: 0}
+  TheBoss: {fileID: 6189518666896292144}
   hasBeenCleared: 0
   bossBattle: 0
 --- !u!1 &928849917307631576
@@ -2197,6 +2197,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c622635330eeb0e4494e2f05c8b8e127, type: 3}
+--- !u!1 &6189518666896292144 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 16408974465870565, guid: c622635330eeb0e4494e2f05c8b8e127, type: 3}
+  m_PrefabInstance: {fileID: 6187908019434165205}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6189518666896292145 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 16408974465870564, guid: c622635330eeb0e4494e2f05c8b8e127, type: 3}
